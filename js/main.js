@@ -1,9 +1,12 @@
 const changeImg = document.getElementById("off-lamp-img");
-console.log(changeImg);
-
 const actionButton = document.querySelector(".btn");
-console.log(actionButton);
 
 actionButton.addEventListener("click", function () {
-  changeImg.src = "../img/yellow_lamp.png";
+  if (actionButton.innerHTML.includes("Accendi")) {
+    changeImg.src = "./img/yellow_Lamp.png";
+    actionButton.innerHTML = "Spegni";
+  } else if (actionButton.innerHTML.includes("Spegni")) {
+    changeImg.src = "./img/white_Lamp.png";
+    actionButton.innerHTML = "Accendi";
+  }
 });
